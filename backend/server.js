@@ -12,6 +12,8 @@ import mongoose from 'mongoose';
 import TeamMemberRoutes from './routes/TeamMemberRoutes.js';
 import ProjectRoutes from './routes/ProjectsRoutes.js';
 import Email from './NodeMailer - Email Service/mail.js';
+import ResourcesRoutes from'./routes/ResourceRoutes.js';
+import StackRoutes from './routes/StackRoutes.js'
 
 //middleware
 app.use(cors())
@@ -26,7 +28,8 @@ app.use((req,res,next) => {
 app.use('/api/v1/members',TeamMemberRoutes)
 app.use('/api/v1/projects',ProjectRoutes)
 app.use('/api/v1/sendEmail',Email)
-
+app.use('/api/v1/resources',ResourcesRoutes)
+app.use('/api/v1/stack',StackRoutes)
 const start = async () => {
     try {
         // Connect to MongoDB

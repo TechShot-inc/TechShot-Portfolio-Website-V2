@@ -7,7 +7,7 @@ const memberSchema = new Schema({
         type: String,
         required: true
     },
-    gmail: {
+    email: {
         type: String,
         required: true
     },
@@ -27,5 +27,5 @@ const memberSchema = new Schema({
         type: String,
         required: true
     }
-}, {timestamps: true})
+}, { timestamps: true })
 export default mongoose.model('TeamMember', memberSchema);

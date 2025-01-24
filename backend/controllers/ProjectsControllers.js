@@ -2,22 +2,22 @@ import Project from '../models/ProjectSchema.js';
 
 import mongoose from 'mongoose';
 
-export const getProjects = async(req,res) => {
-    const projects = await Project.find({}).sort({createdAt:-1})
+export const getProjects = async (req, res) => {
+    const projects = await Project.find({}).sort({ createdAt: -1 })
     res.status(200).json(projects)
 }
 // get a single member
-export const getProject = async(req,res) =>{
-    const {id} = req.params
+export const getProject = async (req, res) => {
+    const { id } = req.params
 
-    if (!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error:'Invalid ID'})
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ error: 'Invalid ID' })
     }
 
     const project = await Project.findById(id)
 
-    if(!project) {
-        return res.status(404).json({error:'No such project'})
+    if (!project) {
+        return res.status(404).json({ error: 'No such project' })
     }
     res.status(200).json(project)
 }
@@ -39,7 +39,7 @@ export const createProject = async (req, res) => {
                 emptyFields.push(`details[${index}].imgPath`);
             }
             if (!detail.descriptionParagraph) {
-                emptyFields.push(`details[${index}].descriptionParagraph`);
+                emptyFields.push(`details[${index}].descriptiodnParagraph`);
             }
             if (!detail.membersID || detail.membersID.length === 0) {
                 emptyFields.push(`details[${index}].membersID`);
@@ -58,9 +58,19 @@ export const createProject = async (req, res) => {
         return res.status(400).json({ error: 'Please fill in all the required fields', emptyFields });
     }
 
+
     // Continue with your logic if all fields are filled
     try {
         const project = await Project.create({ name, details });
+        // Extract all member IDs from the details array
+        const memberIds = details.flatMap(detail => detail.membersID);
+
+        // Update the 'projects' field in TeamMember for the related members
+        await TeamMember.updateMany(
+            { _id: { $in: memberIds } },
+            { $push: { projects: project._id } }
+        );
+
         res.status(200).json(project);
     } catch (error) {
         res.status(400).json({ error: error.message });
@@ -68,17 +78,17 @@ export const createProject = async (req, res) => {
 };
 
 // delete a Project
-export const deleteProject = async (req,res) => {
-    const {id}=req.params
-    
-    if (!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error:'Invalid ID'})
+export const deleteProject = async (req, res) => {
+    const { id } = req.params
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ error: 'Invalid ID' })
     }
 
-    const member = await Project.findByIdAndDelete({_id:id})
+    const member = await Project.findByIdAndDelete({ _id: id })
 
-    if(!project) {
-        return res.status(400).json({error:'No such Project'})
+    if (!project) {
+        return res.status(400).json({ error: 'No such Project' })
     }
     res.status(200).json(Project)
 }
@@ -86,19 +96,18 @@ export const deleteProject = async (req,res) => {
 
 // update a Project
 
+export const updateProject = async (req, res) => {
+    const { id } = req.params
 
-export const updateProject = async (req,res) => {
-    const {id} = req.params
-
-    if (!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error:'Invalid ID'})
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ error: 'Invalid ID' })
     }
 
-    const project = await Project.findByIdAndUpdate({_id:id},{
-    ...req.body
+    const project = await Project.findByIdAndUpdate({ _id: id }, {
+        ...req.body
     })
-    if(!member) {
-        return res.status(400).json({error:'No such workout'})
+    if (!member) {
+        return res.status(400).json({ error: 'No such workout' })
     }
     res.status(200).json(project)
 }
