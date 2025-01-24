@@ -1,0 +1,44 @@
+
+.ErrorText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-weight: 600;
+    color: #f87171;
+    background-color: #fee2e2;
+    border-radius: 0.375rem;
+    width: 6rem;
+    height: 2rem;
+    position: absolute;
+    right: 0;
+    top:0.75rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .ErrorSentence {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f87171;
+    background-color: #fee2e2;
+    border-radius: 0.375rem;
+    width: fit-content;
+    height: 2rem;
+    position: absolute;
+    right: 0;
+    top:0.75rem;
+    text-align: center;
+    -webkit-border-radius: 0.375rem;
+    -moz-border-radius: 0.375rem;
+    -ms-border-radius: 0.375rem;
+    -o-border-radius: 0.375rem;
+  }

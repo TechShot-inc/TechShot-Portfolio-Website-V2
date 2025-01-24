@@ -1,0 +1,56 @@
+#resource-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 30vh;
+  max-width: 300px;
+  margin: 10px 50px;
+}
+
+.img-wrapper {
+    width: 300px;  /* Desired width */
+    height: 300px; /* Desired height */
+    overflow: hidden; /* Hide any overflow */
+    border-radius: 10px; /* Apply rounded corners if desired */
+    position: relative; /* Set position for child elements */
+}
+
+#img {
+    width: 100%;  /* Make the image take full width of the wrapper */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Position absolutely for cropping */
+    top: 50%; /* Center the image vertically */
+    left: 50%; /* Center the image horizontally */
+    transform: translate(-50%, -50%); /* Adjust the position */
+    object-fit: cover; /* Cover the entire wrapper, cropping the image */
+}
+
+
+#resource-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: #57007B;
+  text-align: right;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block; 
+  margin: 4px 2px;
+  padding: 10px 10px;
+}
+
+#arrow {
+    display: inline-block;
+    margin: 0px;
+    cursor: pointer;
+}
+
+#button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; 
+  align-items: center;
+  width: 100%; /* Ensure full width */
+
+}

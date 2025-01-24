@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap');
+
+.headerContainer {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  z-index: 1000;
+  
+}
+
+.header {
+  display: flex;
+  margin: 0px ;
+  padding: 0.75% ;
+  background-color: #79A8DC;
+  width: 100%;
+  max-height: 15%;
+  min-width: 100px;
+  position:fixed;
+  top: 0%; 
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.logoContainer {
+  display:flex;
+  align-items: center;
+  margin: 0.3% 0px;
+}
+.logo{
+  margin: 0px  6% 0px 6%;
+  width: 30%;
+  height: auto;
+}
+.navbar-nav {
+  display: flex;
+  flex-grow: 2;
+  justify-content: space-between;
+  gap: 0px; 
+}
+.logoText{
+  font-size: 32px;
+  font-family: 'Aleo', serif;
+  letter-spacing: 0.5rem;
+  color: #075B9E;
+  -webkit-text-stroke: 0.25px black;
+}
+.space{
+  flex-grow: 8;
+}
+
+.button {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0px auto;
+}

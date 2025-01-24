@@ -1,0 +1,13 @@
+/* :root{
+    min-width: 600px;
+} */
+
+* {
+    font-family: "Jost", sans-serif;
+}
+
+@media (max-width: 768px) {
+    * {
+      font-size: small;
+    }
+}
