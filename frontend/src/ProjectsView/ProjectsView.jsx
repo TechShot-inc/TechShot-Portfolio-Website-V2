@@ -1,48 +1,57 @@
-import './ProjectsView.css'
-import data from '../../assets/projectsView/data.jpg'
-import chip from '../../assets/projectsView/chip.jpg'
-import car from '../../assets/projectsView/car.jpg'
-import robot from '../../assets/projectsView/robot.jpg'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import './ProjectsView.css';
 
 export default function ProjectsView() {
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        // Fetch projects data from the backend
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:4000/api/v1/projects'); // Replace with your API endpoint
+                const data = await response.json();
+                setProjects(data);
+            } catch (error) {
+                console.error('Error fetching projects:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (!projects.length) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div id="carouselExampleCaptions" className="carousel slide carousel-fade projects-cards" data-bs-touch="true">
             <span className='title'>Our Projects</span>
             <div className="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                {projects.map((project, index) => (
+                    <button
+                        key={index}
+                        type="button"
+                        data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide-to={index}
+                        className={index === 0 ? 'active' : ''}
+                        aria-current={index === 0 ? 'true' : 'false'}
+                        aria-label={`Slide ${index + 1}`}
+                    ></button>
+                ))}
             </div>
             <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <img src={robot} className="d-block w-100" />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5 className='label'>Computer Vision</h5>
-                        <p className='sub-label'>a Robot that can monitor and analyze environmental conditions and detect carbon percent in air</p>
+                {projects.map((project, index) => (
+                    <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                        <Link to={`/project/${project._id}`}>
+                            <img src={project.projectImagePath} className="d-block w-100" alt={project.name} />
+                        </Link>
+                        <div className="carousel-caption d-none d-md-block">
+                            <h5 className='label'>{project.name}</h5>
+                            <p className='sub-label'>{project.projectOverview}</p>
+                        </div>
                     </div>
-                </div>
-                <div className="carousel-item">
-                    <img src={car} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5 className='label'>Embedded Systems</h5>
-                        <p className='sub-label'>parking assistance system that uses sensors to detect obstacles and guide drivers.</p>
-                    </div>
-                </div>
-                <div className="carousel-item">
-                    <img src={chip} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5 className='label'>PCB design</h5>
-                        <p className='sub-label'>3mlna el ba7r t7iena</p>
-                    </div>
-                </div>
-                <div className="carousel-item">
-                    <img src={data} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5 className='label'>Data Analysis</h5>
-                        <p className='sub-label'>processes raw data to provide insights and visualizations for informed decision-making.</p>
-                    </div>
-                </div>
+                ))}
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -52,7 +61,6 @@ export default function ProjectsView() {
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Next</span>
             </button>
-
         </div>
     );
 }

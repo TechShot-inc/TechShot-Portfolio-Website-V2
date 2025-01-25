@@ -13,7 +13,7 @@ export const getMember = async (req, res) => {
         return res.status(404).json({ error: 'Invalid ID' })
     }
 
-    const member = await Member.findById(id)
+    const member = await Member.findById(id).populate('projects');
 
     if (!member) {
         return res.status(404).json({ error: 'No such member' })
@@ -23,7 +23,7 @@ export const getMember = async (req, res) => {
 
 export const getMemberByName = async (req, res) => {
     const { name } = req.params;
-    const member = await Member.findOne({ name: name }).exec()
+    const member = await Member.findOne({ name: name }).exec().populate('projects');
 
     if (!member) {
         return res.status(404).json({ error: 'No such member' })
