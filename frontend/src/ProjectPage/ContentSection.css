@@ -1,0 +1,108 @@
+.content-section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 60px 5%;
+    box-sizing: border-box;
+}
+
+.image-left {
+    flex-direction: row;
+}
+
+.image-right {
+    flex-direction: row-reverse;
+}
+
+.text-content {
+    flex: 1;
+    padding: 0 40px;
+    color: #1e1e1e;
+}
+
+.text-content h3 {
+    font-size: 2.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.text-content p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Flex container for highlight text and author card */
+.highlight-author-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.vertical-bar {
+    width: 3px;
+    height: 40px;
+    background-color: #b4209c;
+    border-radius: 2px;
+}
+
+.highlight {
+    font-style: italic;
+    color: #b4209c;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+/* Make the author card align properly */
+.team-member-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-content img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-section {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .text-content {
+        padding: 20px 0;
+    }
+
+    .image-content img {
+        max-width: 80%;
+    }
+
+    .highlight-author-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .text-content p {
+        font-size: 1rem;
+    }
+
+    .highlight {
+        font-size: 1rem;
+    }
+
+    .image-content img {
+        max-width: 100%;
+    }
+}

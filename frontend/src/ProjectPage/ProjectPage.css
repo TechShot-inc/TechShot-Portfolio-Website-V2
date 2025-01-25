@@ -1,0 +1,49 @@
+/* ProjectPage.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 10%;
+    background-color: #dadada;
+
+    /* Matching background color from the image */
+}
+
+.App-header {
+
+    text-align: center;
+    padding: 40px 20px;
+    color: #1e1e1e;
+    
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 7%;
+}
+
+.header-content h2 {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    margin-top: 10px;
+    padding-bottom: 4%;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 40px 0;
+    background-color: #84a2d4;
+}
+
+.ProjectTeam {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 40px 0;
+}
