@@ -4,24 +4,28 @@ import {
     getImage, 
     createImage, 
     updateImage, 
-    deleteImage 
+    deleteImage,
+    getTechStacks,
+    createTechStack, 
+    updateTechStack, 
+    deleteTechStack, 
 } from '../controllers/StackControllers.js';
 
 const router = express.Router();
 
-// Retrieve the whole stack
+// Specific route should come first
+router.get('/techStack', getTechStacks);
+router.post('/techStack', createTechStack);
+router.patch('/techStack/:id', updateTechStack);
+router.delete('/techStack/:id', deleteTechStack);
+
+// General routes for stack
 router.get('/', getStack);
-
-// Retrieve a specific image by ID
 router.get('/:id', getImage);
-
-// Create a new image entry
 router.post('/', createImage);
-
-// Delete a specific image by ID
 router.delete('/:id', deleteImage);
-
-// Update a specific image by ID
 router.patch('/:id', updateImage);
+
+
 
 export default router;
