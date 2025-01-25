@@ -9,17 +9,9 @@ export default function ProjectsEnrolled({ projects }) {
             <div className="container projects-enrolled">
                 <div className="projects-grid">
                     {projects.map((project) => (
-                        <ProjectCard key={project._id} name={project.name} desc={project.briefDescription} />
+                        <ProjectCard key={project._id} projectID={project._id} name={project.name} desc={project.projectOverview} />
                     ))}
-
-                    <ProjectCard name="UX Driven Engineering" desc="Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code." />
-                    <ProjectCard name="UX Driven Engineering" desc="Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code." />
-                    <ProjectCard name="UX Driven Engineering" desc="Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code." />
-                    <ProjectCard name="UX Driven Engineering" desc="Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code." />
-                    {/*                 < ProjectCard name="UX Driven Engineering" desc="Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code." link="https://google.com" />
-                <ProjectCard name="UX Driven Engineering" desc="Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code." link="https://google.com" />
-            </div>*/}     </div>
-
+                </div>
             </div>
         </>
     )
