@@ -20,11 +20,11 @@ router.patch('/techStack/:id', updateTechStack);
 router.delete('/techStack/:id', deleteTechStack);
 
 // General routes for stack
-router.get('/', getStack);
-router.get('/:id', getImage);
-router.post('/', createImage);
-router.delete('/:id', deleteImage);
-router.patch('/:id', updateImage);
+// router.get('/', getStack);
+// router.get('/:id', getImage);
+// router.post('/', createImage);
+// router.delete('/:id', deleteImage);
+// router.patch('/:id', updateImage);
 
 
 

@@ -5,14 +5,31 @@ import HomePage from './Pages/HomePage'
 import ProjectPage from './ProjectPage/ProjectPage';
 import ProfilePage from './Pages/ProfilePage';
 import NotFoundPage from './Pages/NotFoundPage';
+import React, { useRef } from 'react';
 
 function App() {
+  const homeRef = useRef(null);
+  const projectsRef = useRef(null);
+  const teamRef = useRef(null);
+  const resourcesRef = useRef(null);
   return (
     <>
-      <Header />
+      <Header
+        homeRef={homeRef}
+        projectsRef={projectsRef}
+        teamRef={teamRef}
+        resourcesRef={resourcesRef}
+      />
       <Router>
         <div>
           <Routes>
+          <Route path="/" element={<HomePage
+              homeRef={homeRef}
+              projectsRef={projectsRef}
+              teamRef={teamRef}
+              resourcesRef={resourcesRef}
+            />}
+            />
             <Route path="/" element={<HomePage />}
               errorElement={<NotFoundPage />} />
             <Route path="/project/:id" element={<ProjectPage />}
