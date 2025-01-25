@@ -3,6 +3,7 @@ import LandingPage from './LandingPage/LandingPage';
 import ProjectsView from './ProjectsView/ProjectsView';
 import TeamView from './TeamView/TeamView';
 import ResourcesView from './ResourcesView/ResourcesView';
+import TechStack from './TechStack/TechStack';
 
 function HomePage({ homeRef, projectsRef, teamRef, resourcesRef }) {
   return (
@@ -15,6 +16,9 @@ function HomePage({ homeRef, projectsRef, teamRef, resourcesRef }) {
       </div>
       <div ref={teamRef}>
         <TeamView />
+      </div>
+      <div>
+        <TechStack />
       </div>
       <div ref={resourcesRef}>
         <ResourcesView />
