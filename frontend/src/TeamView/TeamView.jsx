@@ -1,36 +1,50 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import "./TeamView.css"
 import TeamMembers from "../TeamMembers/TeamMembers"
-import judy from "../../assets/teamView/judy.jpg"
-import winnie from "../../assets/teamView/winnie.jpeg"
-import kungfu from "../../assets/teamView/kungfu.jpeg"
-import wallE from "../../assets/teamView/wall-e.jpg"
-import tamer from "../../assets/teamView/tamerhosny.jpg"
-import timon from "../../assets/teamView/timon.jpeg"
-import mike from "../../assets/teamView/mike.jpeg"
-import dory from "../../assets/teamView/dory.jpeg"
-import nemo from "../../assets/teamView/nemo.jpeg"
+
 
 export default function TeamView() {
+    const [members, setMembers] = useState([]);
+
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchMembers = async () => {
+            try {
+                const response = await axios.get('http://localhost:4000/api/v1/members');
+                setMembers(response.data);
+                setLoading(false);
+            } catch (error) {
+                console.error("There was an error fetching the members!", error);
+                setLoading(false);
+            }
+        };
+
+        fetchMembers();
+    }, []);
+
+    // If loading, show a loading message or spinner
+    if (loading) {
+        return <div>Loading...</div>;
+    }
     return (
         <div className="team-view container">
             <h2 style={{ fontWeight: 'bold' }}>Team Members</h2>
             <blockquote>“The one who are crazy enough to think
                 they can change the world,
                 are the ones who do.” ~Steve Jobs</blockquote>
-            <div className="row team-view-row">
-                <TeamMembers name="Ahmed" image={tamer} />
+            {/*  display first member */}
+            <div className="team-view-row">
+                {members.length > 0 &&
+                    <TeamMembers key={members[0]._id} memberId={members[0]._id} name={members[0].name} image={members[0].imgPath} />
+                }
             </div>
-            <div className="row team-view-row">
-                <TeamMembers name="Naggar" image={winnie} />
-                <TeamMembers name="Marwan" image={wallE} />
-                <TeamMembers name="Mariam" image={judy} />
-                <TeamMembers name="Moatassem" image={timon} />
-            </div>
-            <div className="row team-view-row">
-                <TeamMembers name="Youssef" image={nemo} />
-                <TeamMembers name="Habiba" image={dory} />
-                <TeamMembers name="Ziad" image={kungfu} />
-                <TeamMembers name="Doma" image={mike} />
+            {/* loop through the rest */}
+            <div className="team-view-row">
+                {members.slice(1).map((member) => (
+                    <TeamMembers key={member._id} memberId={member._id} name={member.name} image={member.imgPath} />
+                ))}
             </div>
         </div>
     )

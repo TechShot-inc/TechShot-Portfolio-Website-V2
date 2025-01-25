@@ -1,7 +1,10 @@
 import "./TeamMembers.css";
 import { ReactSVG } from "react-svg";
-import frame from "../../assets/TeamMembers/frame.svg"
-export default function TeamMembers({ name, image }) {
+import frame from "../../assets/TeamMembers/frame.svg";
+import { useNavigate } from 'react-router-dom';
+
+export default function TeamMembers({ memberId, name, image }) {
+    const navigate = useNavigate();
     return (
         <div className="frame-container">
             <ReactSVG
@@ -14,12 +17,12 @@ export default function TeamMembers({ name, image }) {
                     foreign.setAttribute('height', '100');
                     foreign.setAttribute('class', 'foreign');
                     const memberImageContainer = document.createElement('div');
-                    memberImageContainer.classList.add('member-image-container');
+                    memberImageContainer.classList.add('team-member-image-container');
                     foreign.appendChild(memberImageContainer);
 
                     const memberImage = document.createElement('img');
                     memberImage.setAttribute('src', image);
-                    memberImage.classList.add('member-image');
+                    memberImage.classList.add('team-member-image');
                     memberImageContainer.appendChild(memberImage);
                     svg.appendChild(foreign);
 
@@ -42,7 +45,7 @@ export default function TeamMembers({ name, image }) {
                     profileButton.innerText = 'Profile';
                     profileButton.classList.add('profile-button');
                     profileButton.addEventListener('click', () => {
-                        alert('Button inside SVG clicked!');
+                        navigate(`/members/${memberId}`);
                     });
                     foreignObject.appendChild(profileButton);
                     svg.appendChild(foreignObject);
