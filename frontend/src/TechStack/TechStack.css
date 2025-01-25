@@ -1,0 +1,44 @@
+.tech-stack{
+    background-color: #79A8DC;
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center;/* Center content horizontally */
+    text-align: center;
+    height: 50vh;          /* Full viewport height */
+    margin: 0;
+    padding: 0;
+
+}
+
+.tech-logo{
+    padding: 30px;
+}
+
+.title{
+    font-size: 4em;
+    padding-top: 0;
+    margin-top: 0;
+}
+.categoryButton{
+    
+    font-size: 32px;
+    
+}
+.nav.nav-pills .nav-link.active {
+    background-image: linear-gradient(45deg, #F76680, #57007B); /* Gradient from pink to purple */
+    -webkit-background-clip: text; /* Specific to WebKit browsers */
+    background-clip: text; /* Clip background to the text (standard property) */
+    color: transparent; /* Make the text color transparent to show the background */
+    font-weight: bold; /* Bold text */
+}
+
+
+.nav.nav-pills .nav-link {
+    color: black;
+    background-color: transparent;
+    font-weight: normal;
+}
+.nav.nav-pills .nav-link:hover {
+    background-color: rgba(32, 32, 32, 0.1);
+}
