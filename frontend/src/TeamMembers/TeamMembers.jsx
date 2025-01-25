@@ -4,6 +4,7 @@ import frame from "../../assets/TeamMembers/frame.svg";
 import { useNavigate } from 'react-router-dom';
 
 export default function TeamMembers({ memberId, name, image }) {
+    
     const navigate = useNavigate();
     return (
         <div className="frame-container">

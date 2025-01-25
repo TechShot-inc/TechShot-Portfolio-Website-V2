@@ -98,7 +98,7 @@ const ProjectMembers = ({ project }) => {
                     <div className="row team-view-row">
                         {memberNames.length > 0 ? (
                             memberNames.map((member) => (
-                                <TeamMembers key={member.id} name={member.name} image={member.imgPath} />
+                                <TeamMembers key={member.id} memberId={member.id} name={member.name.split(' ')[0]} image={member.imgPath} />
                             ))
                         ) : (
                             <p>Loading members...</p>
