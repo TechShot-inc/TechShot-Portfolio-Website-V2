@@ -31,7 +31,7 @@ const TeamMemberCard = ({ memberId }) => {
     if (!member) return <p>No member found</p>;
 
     return (
-        <Link className="team-member-card">
+        <Link to={`/members/${memberId}`} className="team-member-card">
             <img src={member.imgPath} alt={member.name} className="member-avatar" />
             <div className="member-info">
                 <h4 className="member-name">{member.name}</h4>
