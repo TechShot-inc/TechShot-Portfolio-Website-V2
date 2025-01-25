@@ -1,4 +1,4 @@
-import './ResoursesView.css';
+import './ResourcesView.css';
 import Resource from "../Resource/Resource";
 import { useState, useEffect } from 'react';
 
