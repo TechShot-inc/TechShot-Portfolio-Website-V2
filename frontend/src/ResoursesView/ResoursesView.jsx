@@ -1,36 +1,44 @@
-import './ResoursesView.css'
-import Resource from "../Resource/Resource"
-import ResourceModel from './ResourceModel';
-import pic1 from '../../assets/resourcesView/gilmour.jpg'
-import pic2 from '../../assets/resourcesView/bowie.jpg'
-import pic3 from '../../assets/resourcesView/moore.jpg'
-import pic4 from '../../assets/resourcesView/ray_vaughan.jpg'
-import pic5 from '../../assets/resourcesView/slash.jpg'
-import pic6 from '../../assets/resourcesView/clapton.jpg'
-import pic7 from '../../assets/resourcesView/hendrix.jpg'
+import './ResoursesView.css';
+import Resource from "../Resource/Resource";
+import { useState, useEffect } from 'react';
 
 function ResourcesView() {
+    const [resources, setResources] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const resources = [
-        new ResourceModel(pic2, 'David Bowie'),
-        new ResourceModel(pic1, 'David Gilmour'),
-        new ResourceModel(pic3, 'Gary Moore'),
-        new ResourceModel(pic4, 'Stevie Ray Vaughan'),
-        new ResourceModel(pic5, 'Slash'),
-        new ResourceModel(pic6, 'Eric Clapton'),
-        new ResourceModel(pic7, 'Jimi Hendrix')
-    ];
+    useEffect(() => {
+        async function fetchResources() {
+            try {
+                const response = await fetch(`http://localhost:4000/api/v1/resources`);
+                const data = await response.json();
+                if (response.ok) {
+                    setResources(data); 
+                }
+            } catch (error) {
+                console.error("Failed to fetch resources:", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        fetchResources();
+    }, []);
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
 
     return (
         <div id='resources-view-container'>
             <h3>Featured</h3>
             <h2>Resources</h2>
             <div id='resources-container' className="scroll-container">
-                {resources.map((resource, index) => (
+                {resources.map((resource) => (
                     <Resource
-                        key={index}
-                        image={resource.image}
-                        description={resource.description}
+                        key={resource._id} 
+                        image={resource.imgPath} 
+                        description={resource.paragraph} 
+                        link={resource.link}
                     />
                 ))}
             </div>
@@ -38,4 +46,4 @@ function ResourcesView() {
     );
 }
 
-export default ResourcesView
+export default ResourcesView;
