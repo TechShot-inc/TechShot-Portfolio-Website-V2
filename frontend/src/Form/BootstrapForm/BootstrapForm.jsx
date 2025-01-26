@@ -44,7 +44,7 @@ export default function BootstrapForm() {
 
     return (
         <FormProvider {...form}>
-            <Form className='container' onSubmit={handleSubmit(onSubmit)}
+            <Form className='container form-fields' onSubmit={handleSubmit(onSubmit)}
                 noValidate>
                 <div className="row col-lg-13">
                     <Form.Group className="col-md-12 col-lg-6">
