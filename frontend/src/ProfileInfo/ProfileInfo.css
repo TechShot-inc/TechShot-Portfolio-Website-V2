@@ -23,9 +23,7 @@
 }
 
 
-.profile-name{
-    justify-self: center;
-}
+
 .profile-info{
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -43,6 +41,9 @@
     .profile-info {
         grid-template-columns: 1fr 3fr;
     }
+    .profile-name{
+        font-size: 2.5rem;
+    }
 }
 
 /* Medium devices (tablets in portrait mode, 768px and up) */
@@ -56,6 +57,11 @@
     .member-image-container{
         justify-self: center;
     }
+    .profile-name{
+        text-align: center;
+        font-size: 3rem;
+    }
+    
 }
 
 /* Small devices (mobile phones, 576px and up) */

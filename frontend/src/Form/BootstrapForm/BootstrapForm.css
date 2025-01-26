@@ -1,7 +1,9 @@
 
 .form-label {
     color: #8D8D8D;
-}
+    font-size: 0.9rem;
+  }
+    
 
 .form-label-focused {
     color: #0c0c0cec;
@@ -116,6 +118,21 @@
   font-weight:600;
   font-size: 0.8rem;
   color: green;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;  
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  flex: 1; /* Make input take up available space */
+  position: relative;
+  width: 100%;
 }
 @media(max-width: 900px) {
 

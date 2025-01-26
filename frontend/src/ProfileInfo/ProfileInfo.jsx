@@ -8,13 +8,13 @@ export default function ProfileInfo({ image, name, email, github, linkedin }) {
             </div>
             <div className="info row container col-lg-8 col-md-9 col-sm-12">
                 <h1 className="profile-name">{name}</h1>
-                <a href={email} target="_blank" style={{ color: 'black', fontWeight: 'normal' }}>
+                <a href={email} target="_blank" style={{ color: 'black', fontWeight: 'normal', 'text-decoration': 'underline' }}>
                     {email}
                 </a>
-                <a href={github} target="_blank" style={{ color: 'black', fontWeight: 'normal' }}>
+                <a href={github} target="_blank" style={{ color: 'black', fontWeight: 'normal', 'text-decoration': 'underline' }}>
                     Github
                 </a>
-                <a href={linkedin} target="_blank" style={{ color: 'black', fontWeight: 'normal' }}>
+                <a href={linkedin} target="_blank" style={{ color: 'black', fontWeight: 'normal', 'text-decoration': 'underline' }}>
                     Linked In
                 </a>
             </div>

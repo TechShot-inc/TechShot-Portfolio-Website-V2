@@ -43,14 +43,15 @@ export default function BootstrapForm() {
 
 
     return (
-        //Then you utilize the JavaScript spread operator to pass all the useForm form to the FormProvider
-        //pass noValidate to indicate that you want to rely entirely on react-hook-form for form validation
         <FormProvider {...form}>
             <Form className='container' onSubmit={handleSubmit(onSubmit)}
                 noValidate>
-                <div className="form-row">
+                <div className="row col-lg-13">
                     <Form.Group className="col-md-12 col-lg-6">
-                        <Form.Label htmlFor={'firstName'} className={`form-label ${focusedLabel === 'firstName' ? 'form-label-focused' : ''}`}>First Name</Form.Label>
+                        <div className="input-container">
+                            <Form.Label htmlFor={'firstName'} className={`form-label ${focusedLabel === 'firstName' ? 'form-label-focused' : ''}`}>First Name</Form.Label>
+                            <ErrorMessage error={errors.firstName?.message} />
+                        </div>
                         <FormControl
                             type='text'
                             id='firstName'
@@ -70,10 +71,12 @@ export default function BootstrapForm() {
                                 },
                             })}
                         />
-                        <ErrorMessage error={errors.firstName?.message} />
                     </Form.Group>
                     <Form.Group className="col-md-12 col-lg-6">
-                        <Form.Label htmlFor={'lastName'} className={`form-label ${focusedLabel === 'lastName' ? 'form-label-focused' : ''}`}>Last Name</Form.Label>
+                        <div className="input-container">
+                            <Form.Label htmlFor={'lastName'} className={`form-label ${focusedLabel === 'lastName' ? 'form-label-focused' : ''}`}>Last Name</Form.Label>
+                            <ErrorMessage error={errors.lastName?.message} />
+                        </div>
                         <FormControl
                             type='text'
                             id='lastName'
@@ -93,12 +96,14 @@ export default function BootstrapForm() {
                                 },
                             })}
                         />
-                        <ErrorMessage error={errors.lastName?.message} />
                     </Form.Group>
                 </div>
-                <div className="form-row">
+                <div className="row col-lg-13">
                     <Form.Group className="col-md-12 col-lg-6">
-                        <Form.Label htmlFor={'email'} className={`form-label ${focusedLabel === 'email' ? 'form-label-focused' : ''}`}>Email</Form.Label>
+                        <div className="input-container">
+                            <Form.Label htmlFor={'email'} className={`form-label ${focusedLabel === 'email' ? 'form-label-focused' : ''}`}>Email</Form.Label>
+                            <ErrorMessage error={errors.email?.message} />
+                        </div>
                         <FormControl
                             type='email'
                             id='email'
@@ -119,10 +124,12 @@ export default function BootstrapForm() {
                                 },
                             })}
                         />
-                        <ErrorMessage error={errors.email?.message} />
                     </Form.Group>
                     <Form.Group className="col-md-12 col-lg-6">
-                        <Form.Label htmlFor={'phoneNumber'} className={`form-label ${focusedLabel === 'phoneNumber' ? 'form-label-focused' : ''}`}>Phone Number</Form.Label>
+                        <div className="input-container">
+                            <Form.Label htmlFor={'phoneNumber'} className={`form-label ${focusedLabel === 'phoneNumber' ? 'form-label-focused' : ''}`}>Phone Number</Form.Label>
+                            <ErrorMessage error={errors.phoneNumber?.message} />
+                        </div>
                         {/*  PhoneInput handles its own state internally
                     Controller handles connection between rhf and contolled component */}
                         <Controller
@@ -158,13 +165,15 @@ export default function BootstrapForm() {
                                 />
                             )}
                         />
-                        <ErrorMessage error={errors.phoneNumber?.message} />
                     </Form.Group>
                 </div>
                 <br /> <br />
                 <div className="form-row message">
                     <Form.Group className="mb-3 col-12">
-                        <Form.Label htmlFor={'message'} className={`form-label ${focusedLabel === 'message' ? 'form-label-focused' : ''}`}>Message</Form.Label>
+                        <div className="input-container">
+                            <Form.Label htmlFor={'message'} className={`form-label ${focusedLabel === 'message' ? 'form-label-focused' : ''}`}>Message</Form.Label>
+                            <ErrorMessage error={errors.message?.message} />
+                        </div>
                         <FormControl
                             as='textarea'
                             id='message'
@@ -184,7 +193,6 @@ export default function BootstrapForm() {
                                 },
                             })}
                         />
-                        <ErrorMessage error={errors.message?.message} />
                     </Form.Group>
                 </div>
                 <div className='button-wrap'>
