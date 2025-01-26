@@ -4,7 +4,7 @@ import frame from "../../assets/TeamMembers/frame.svg";
 import { useNavigate } from 'react-router-dom';
 
 export default function TeamMembers({ memberId, name, image }) {
-    
+    console.log(name)
     const navigate = useNavigate();
     return (
         <div className="frame-container">
@@ -32,7 +32,7 @@ export default function TeamMembers({ memberId, name, image }) {
                     textElement.setAttribute('y', '60%');
                     textElement.setAttribute('text-anchor', 'middle');
                     textElement.setAttribute('class', 'member-name');
-                    textElement.textContent = name;
+                    textElement.textContent = name.name.split(' ')[0];
                     svg.appendChild(textElement);
 
                     const foreignObject = document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject');
@@ -46,7 +46,7 @@ export default function TeamMembers({ memberId, name, image }) {
                     profileButton.innerText = 'Profile';
                     profileButton.classList.add('profile-button');
                     profileButton.addEventListener('click', () => {
-                        navigate(`/members/${memberId}`);
+                        navigate(`/members/${name.name}`);
                     });
                     foreignObject.appendChild(profileButton);
                     svg.appendChild(foreignObject);

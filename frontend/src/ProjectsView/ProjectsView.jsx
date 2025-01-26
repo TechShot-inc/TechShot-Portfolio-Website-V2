@@ -43,7 +43,7 @@ export default function ProjectsView() {
             <div className="carousel-inner">
                 {projects.map((project, index) => (
                     <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-                        <Link to={`/project/${project._id}`}>
+                        <Link to={`/project/${project.name}`}>
                             <img src={project.projectImagePath} className="d-block w-100" alt={project.name} />
                         </Link>
                         <div className="carousel-caption d-none d-md-block">

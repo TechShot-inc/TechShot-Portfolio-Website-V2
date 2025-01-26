@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import NotFoundPage from './NotFoundPage';
 
 export default function ProfilePage() {
-  const { id } = useParams(); // Get the ID from the URL
+  const { id ,name} = useParams(); // Get the ID from the URL
   const [member, setMember] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -15,7 +15,7 @@ export default function ProfilePage() {
     //fetch member
     const fetchMember = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/api/v1/members/id/${id}`);
+        const response = await fetch(`http://localhost:4000/api/v1/members/name/${name}`);
         if (!response.ok) {
           throw new Error('Failed to fetch member');
         }
@@ -29,7 +29,7 @@ export default function ProfilePage() {
     };
 
     fetchMember();
-  }, [id]);
+  }, [name]);
 
   if (loading) {
     return <div>Loading...</div>;

@@ -32,7 +32,21 @@ export const getProject = async (req, res) => {
         res.status(500).json({ error: 'Server Error' });
     }
 };
+export const getProjectByName = async(req,res) => {
+    const { name } = req.params;
+    try {
+        const project = await Project.findOne({ name });
 
+        if (!project) {
+            return res.status(404).json({ error: 'No such project' });
+        }
+
+        res.status(200).json(project);
+    } catch (error) {
+        console.error('Error fetching member by name:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+}
 
 // Add a new project
 export const createProject = async (req, res) => {

@@ -30,10 +30,9 @@ function App() {
               resourcesRef={resourcesRef}
             />}
             />
-            <Route path="/project/:id" element={<ProjectPage />}
+            <Route path="/project/:name" element={<ProjectPage />}
               errorElement={<NotFoundPage />} />
-            <Route path="/members/:id" element={<ProfilePage />}
-              errorElement={<NotFoundPage />} />
+            <Route path="/members/:name" element={<ProfilePage />} errorElement={<NotFoundPage />} />
 
           </Routes>
         </div>

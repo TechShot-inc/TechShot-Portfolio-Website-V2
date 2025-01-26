@@ -10,14 +10,14 @@ import {
     updateTechStack, 
     deleteTechStack, 
 } from '../controllers/StackControllers.js';
-
+import { validateApiKey } from './ValidateApiKey.js';
 const router = express.Router();
 
 // Specific route should come first
 router.get('/techStack', getTechStacks);
-router.post('/techStack', createTechStack);
-router.patch('/techStack/:id', updateTechStack);
-router.delete('/techStack/:id', deleteTechStack);
+router.post('/techStack', validateApiKey ,createTechStack);
+router.patch('/techStack/:id', validateApiKey, updateTechStack);
+router.delete('/techStack/:id', validateApiKey, deleteTechStack);
 
 // General routes for stack
 // router.get('/', getStack);

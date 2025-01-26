@@ -37,13 +37,13 @@ export default function TeamView() {
             {/*  display first member */}
             <div className="team-view-row">
                 {members.length > 0 &&
-                    <TeamMembers key={members[0]._id} memberId={members[0]._id} name={members[0].name.split(' ')[0]} image={members[0].imgPath} />
+                    <TeamMembers key={members[0]._id} memberId={members[0]._id} name={members[0]} image={members[0].imgPath} />
                 }
             </div>
             {/* loop through the rest */}
             <div className="team-view-row">
                 {members.slice(1).map((member) => (
-                    <TeamMembers key={member._id} memberId={member._id} name={member.name.split(' ')[0]} image={member.imgPath} />
+                    <TeamMembers key={member._id} memberId={member._id} name={member} image={member.imgPath} />
                 ))}
             </div>
         </div>
