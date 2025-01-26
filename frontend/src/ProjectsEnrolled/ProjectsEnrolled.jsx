@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard"
 export default function ProjectsEnrolled({ projects }) {
 
     return (
-        <>
+        <div className="projects">
             <h1 className="projects-enrolled-header">Projects Enrolled</h1>
             <div className="container projects-enrolled">
                 <div className="projects-grid">
@@ -13,6 +13,6 @@ export default function ProjectsEnrolled({ projects }) {
                     ))}
                 </div>
             </div>
-        </>
+        </div>
     )
 }

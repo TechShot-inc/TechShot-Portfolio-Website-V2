@@ -11,6 +11,8 @@
     padding: 0; /* Add padding if desired */
     margin-top: 7px;
     height: 30px;
+    background-color: transparent;
+    color: #000;
 }
 .phoneNumber .PhoneInputCountrySelectArrow {
     color: #000; /* Change to desired color */
