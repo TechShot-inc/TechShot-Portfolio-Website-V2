@@ -1,0 +1,30 @@
+.SocialLinks svg{
+    cursor: pointer;
+}
+
+
+  
+@media (max-width: 768px) {
+    .SocialLinks {
+
+}
+}
+
+
+@media (max-width: 991.98px) {
+    .SocialLinks {
+        justify-self: center;
+        align-self: center;
+        position: relative;
+}
+}
+@media (max-width: 1199.98px) { 
+
+}
+@media (max-width: 1399.98px) {
+    .SocialLinks {
+       
+    }
+}
+
+

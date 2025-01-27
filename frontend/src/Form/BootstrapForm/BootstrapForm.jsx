@@ -35,7 +35,7 @@ export default function BootstrapForm() {
             setTimeout(() => {
                 form.reset();
                 setSuccess(false);
-            }, 2500);
+            }, 1500);
         } catch (error) {
             console.log('Network error:', error); // Log the error for debugging purposes
         }
