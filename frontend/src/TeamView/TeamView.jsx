@@ -29,7 +29,8 @@ export default function TeamView() {
         return <div>Loading...</div>;
     }
     return (
-        <div className="team-view container">
+        <div className='TeamViewContainer'>
+                    <div className="team-view container">
             <h2 style={{ fontWeight: 'bold' }}>Team Members</h2>
             <blockquote>“The one who are crazy enough to think
                 they can change the world,
@@ -46,6 +47,7 @@ export default function TeamView() {
                     <TeamMembers key={member._id} memberId={member._id} name={member} image={member.imgPath} />
                 ))}
             </div>
+        </div>
         </div>
     )
 }

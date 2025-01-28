@@ -24,14 +24,14 @@ function ResourcesView() {
         fetchResources();
     }, []);
 
-    if (loading) {
-        return <p>Loading...</p>;
+    if (! resources.length) {
+        return <div className='NoResources'></div>;
     }
 
     return (
         <div id='resources-view-container'>
             <h3>Featured</h3>
-            <h2>Resources</h2>
+            <h2 className='resources-title'>Resources</h2>
             <div id='resources-container' className="scroll-container">
                 {resources.map((resource) => (
                     <Resource

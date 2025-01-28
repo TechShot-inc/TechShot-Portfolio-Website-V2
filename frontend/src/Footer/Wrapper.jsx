@@ -18,7 +18,7 @@ export default function Wrapper({ homeRef, projectsRef, teamRef, resourcesRef })
             <div className='row wrapper-row'>
                 <div className='col-sm-4 col-md-4 col-lg-4 footerContent sloganContainer'>
                     <img src={logo} className='logo' />
-                    <div className='slogan'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                    <div className='slogan'>Dreams become reality when a team of talented minds comes together.</div>
                 </div>
                 <div className='col-sm-4 col-md-4 col-lg-4'>
                     <h5>Information</h5>
@@ -31,8 +31,7 @@ export default function Wrapper({ homeRef, projectsRef, teamRef, resourcesRef })
                     </ul>
                 </div>
                 <div className='col-sm-4 col-md-4 col-lg-4 footerContent contactUs'>
-                    <h5>Contact Us</h5>
-                    <div className='phoneNumber'>+923183561921</div>
+                <button className="btn btn-text ContactUs" onClick={() => scrollToRef(homeRef)}>Contact Us</button>
                 </div>
             </div>
             <div className='row social col-6'>

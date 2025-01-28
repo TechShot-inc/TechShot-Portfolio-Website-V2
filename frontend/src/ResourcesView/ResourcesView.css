@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  
 }
 
 #resources-container {
@@ -34,7 +33,7 @@
   border-radius: 10px;
 }
 
-h2 {
+.resources-title {
   font-size: 35px;
   font-weight: bold;
   margin: 10px 0px 20px 0px;
@@ -45,4 +44,15 @@ h3 {
   font-size: 35px;
   font-weight: normal;
   font-family: "Jost",sans-serif;
+}
+
+@media (max-width: 770px) {
+  .resources-title{
+    font-size: 2rem;
+  }
+}
+  
+.NoResources{
+  min-height: 3px;
+  background-color: black;
 }

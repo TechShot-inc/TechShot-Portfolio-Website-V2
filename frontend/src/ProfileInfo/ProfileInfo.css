@@ -1,48 +1,38 @@
-
-.member-image-container {
-    justify-self: start;
-    width: 200px;
-    height: 200px;
+.profile-photo-container img.rounded-circle {
     border: 3px solid purple;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.member-image {
-    width: 100%;
-    height: 100%;
-}
-
-.info{
+.info {
     padding-bottom: 1rem;
-    margin:1rem;
+    margin: 1rem;
 }
 
 
+.profile-name {
+    justify-self: center;
+}
 
-.profile-info{
+.profile-info {
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 1rem;
     margin: 1rem;
 }
 
-/* Extra large devices (desktops, 1200px and up) */
-@media (max-width: 1200px) {
-
+.profile-link {
+    text-decoration: underline;
+    color: black;
+    font-weight: 600;
 }
+
+/* Extra large devices (desktops, 1200px and up) */
+@media (max-width: 1200px) {}
 
 /* Large devices (desktops and tablets in landscape mode, 992px and up) */
 @media (max-width: 992px) {
     .profile-info {
         grid-template-columns: 1fr 3fr;
-    }
-    .profile-name{
-        font-size: 2.5rem;
     }
 }
 
@@ -51,17 +41,14 @@
     .profile-info {
         grid-template-columns: 1fr;
     }
-    .info{
+
+    .info {
         justify-self: center;
     }
-    .member-image-container{
+
+    .member-image-container {
         justify-self: center;
     }
-    .profile-name{
-        text-align: center;
-        font-size: 3rem;
-    }
-    
 }
 
 /* Small devices (mobile phones, 576px and up) */
@@ -72,6 +59,4 @@
 }
 
 /* Extra small devices (smaller phones, below 576px) */
-@media (max-width: 360px) {
-
-}
+@media (max-width: 360px) {}

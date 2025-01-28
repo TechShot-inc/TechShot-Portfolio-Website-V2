@@ -2,7 +2,9 @@ import "./ProjectsEnrolled.css";
 //import '.../assets/bootstrap-5.3.3-dist/css/bootstrap.min.css';
 import ProjectCard from "./ProjectCard"
 export default function ProjectsEnrolled({ projects }) {
-
+    if(!projects.length){
+        return <div className="NoProjectsEnrolled"></div>
+    }
     return (
         <div className="projects">
             <h1 className="projects-enrolled-header">Projects Enrolled</h1>

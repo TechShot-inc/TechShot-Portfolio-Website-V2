@@ -33,7 +33,6 @@ export default function ProfilePage() {
   if (loading) {
     return <div>Loading...</div>;
   }
-
   if (error) {
     return <NotFoundPage />;
   }
