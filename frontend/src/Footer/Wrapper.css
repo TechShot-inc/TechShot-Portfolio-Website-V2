@@ -43,7 +43,7 @@ h5 {
     margin-block: 1.5rem;
 }
 
-.information li a{
+.information li button{
     color: #191970;
     text-decoration: none;
     z-index: 3;
@@ -52,9 +52,11 @@ h5 {
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
+    font-size: 1.3rem;
+    font-weight: 700;
 }
 
-li a:hover {
+.information  button:hover {
     padding-left: 1rem;
     color: #FFFFFF;
 }

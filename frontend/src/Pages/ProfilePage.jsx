@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import Header from "../Header/Header";
 import TeamMemberView from "../TeamMemberView/TeamMemberView";
-import Footer from "../Footer/Footer";
 import { useParams } from 'react-router-dom';
 import NotFoundPage from './NotFoundPage';
 
 export default function ProfilePage() {
-  const { id ,name} = useParams(); // Get the ID from the URL
+  const { id, name } = useParams(); // Get the ID from the URL
   const [member, setMember] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -51,7 +50,6 @@ export default function ProfilePage() {
         image={member.imgPath}
         projects={member.projects}
       />
-      <Footer />
     </>
   );
 }
