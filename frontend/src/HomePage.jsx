@@ -23,6 +23,7 @@ function HomePage({ homeRef, projectsRef, teamRef, resourcesRef }) {
       <div ref={resourcesRef}>
         <ResourcesView />
       </div>
+
     </>
   );
 }

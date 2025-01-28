@@ -6,10 +6,7 @@ import ProjectPage from './ProjectPage/ProjectPage';
 import ProfilePage from './Pages/ProfilePage';
 import NotFoundPage from './Pages/NotFoundPage';
 import React, { useRef } from 'react';
-
-
-
-
+import Footer from './Footer/Footer';
 function App() {
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
@@ -39,7 +36,11 @@ function App() {
 
           </Routes>
         </div>
-      
+      <Footer
+        homeRef={homeRef}
+        projectsRef={projectsRef}
+        teamRef={teamRef}
+        resourcesRef={resourcesRef} />
     </>
   );
 }

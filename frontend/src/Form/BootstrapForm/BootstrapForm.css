@@ -2,6 +2,9 @@
 .form-label {
     color: #8D8D8D;
     font-size: 0.9rem;
+    flex: 0 0 7rem;
+    text-shadow: 0 1px 1.5px #8D8D8D;
+
   }
     
 
@@ -32,7 +35,7 @@
     -o-border-radius: 25px;
     position: absolute;
     right: 50px;
-    bottom: -80px;
+    bottom: -5rem;
 }
   
   .submit-button:hover {
@@ -95,14 +98,12 @@
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
+    width: 100%;
 }
 
-.form-label {
-    text-shadow: 0 1px 1.5px #8D8D8D;
-}
 
 .container {
-    line-height: 40px ;
+    line-height: 20px ;
 }
 
 .form-control {
@@ -126,6 +127,7 @@
   align-items: center;  
   margin-bottom: 1rem;
   width: 100%;
+  justify-content: space-between;
 }
 
 .input-container {
@@ -134,28 +136,62 @@
   position: relative;
   width: 100%;
 }
-@media(max-width: 900px) {
 
+.form-fields{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+
+@media(max-width: 1200px) {
  
-  .message {
+/*   .message {
     transform: translate(0%,-40%);
     -webkit-transform: translate(0%,-40%);
     -moz-transform: translate(0%,-40%);
     -ms-transform: translate(0%,-40%);
     -o-transform: translate(0%,-40%);
 }
+ */
 
 }
+@media(max-width: 992px) {
 
-@media(max-width: 1400px) {
  
+    .message {
+      transform: translate(0%,-40%);
+      -webkit-transform: translate(0%,-40%);
+      -moz-transform: translate(0%,-40%);
+      -ms-transform: translate(0%,-40%);
+      -o-transform: translate(0%,-40%);
+}
+.submit-button{
+  bottom: -3rem;
+}
+}
+  
+  /* Medium devices (tablets in portrait mode, 768px and up) */
+@media (max-width: 768px) {
   .message {
-    transform: translate(0%,-30%);
-    -webkit-transform: translate(0%,-30%);
-    -moz-transform: translate(0%,-30%);
-    -ms-transform: translate(0%,-30%);
-    -o-transform: translate(0%,-30%);
+    transform: translate(0%,-60%);
+    -webkit-transform: translate(0%,-60%);
+    -moz-transform: translate(0%,-60%);
+    -ms-transform: translate(0%,-60%);
+    -o-transform: translate(0%,-60%);
+}
+  .submit-button{
+    bottom: 0.8rem;
+    right: 1rem;
+  }
+  .submit-button .svg-wrapper {
+    width: 20px;
+    height: 20px;
+  }
 }
 
+/* Small devices (mobile phones, 576px and up) */
+@media (max-width: 576px) {
 }
 

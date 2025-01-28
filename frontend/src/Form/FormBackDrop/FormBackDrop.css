@@ -9,16 +9,34 @@
     overflow: hidden;
   }
   
+  .backdrop{
+    position: relative;
+  }
   
 
-  
+  .close-button{
+    position: absolute;
+    top: 2rem;
+    right: 13rem;
+  }
+  @media(max-width: 1400px){
+    .close-button{
+      right: 8rem;
+    }
+  }
+  @media(max-width: 1200px){
+    .close-button{
+      right: 2rem;
+    }
+  }
   @media (max-width: 991.98px) {
-  
+
     .form-container {
       grid-template-columns: 50% 50%;
     }
-  
+
   }
+  
   @media (max-width: 768px) {
     * {
       font-size: small;
@@ -28,5 +46,15 @@
       grid-template-columns: 1fr;
       height: auto; 
     }
+    .close-button{
+      top:10rem;
+    }
   
   }
+
+  /* Small devices (mobile phones, 576px and up) */
+@media (max-width: 576px) {
+  .close-button{
+    top:13rem;
+  }
+}
