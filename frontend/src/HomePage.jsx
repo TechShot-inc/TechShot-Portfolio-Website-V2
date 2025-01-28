@@ -4,6 +4,7 @@ import ProjectsView from './ProjectsView/ProjectsView';
 import TeamView from './TeamView/TeamView';
 import ResourcesView from './ResourcesView/ResourcesView';
 import TechStack from './TechStack/TechStack';
+import Footer from './Footer/Footer';
 
 function HomePage({ homeRef, projectsRef, teamRef, resourcesRef }) {
   return (
@@ -22,6 +23,9 @@ function HomePage({ homeRef, projectsRef, teamRef, resourcesRef }) {
       </div>
       <div ref={resourcesRef}>
         <ResourcesView />
+      </div>
+      <div>
+        <Footer />
       </div>
     </>
   );

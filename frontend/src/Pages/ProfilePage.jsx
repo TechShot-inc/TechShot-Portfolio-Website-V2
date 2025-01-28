@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from "../Header/Header";
 import TeamMemberView from "../TeamMemberView/TeamMemberView";
-//import Footer from "../Footer/Footer";
+import Footer from "../Footer/Footer";
 import { useParams } from 'react-router-dom';
 import NotFoundPage from './NotFoundPage';
 
@@ -51,7 +51,7 @@ export default function ProfilePage() {
         image={member.imgPath}
         projects={member.projects}
       />
-      {/*   <Footer /> */}
+      <Footer />
     </>
   );
 }

@@ -35,7 +35,7 @@ export default function BootstrapForm() {
             setTimeout(() => {
                 form.reset();
                 setSuccess(false);
-            }, 2500);
+            }, 1500);
         } catch (error) {
             console.log('Network error:', error); // Log the error for debugging purposes
         }
@@ -44,7 +44,7 @@ export default function BootstrapForm() {
 
     return (
         <FormProvider {...form}>
-            <Form className='container' onSubmit={handleSubmit(onSubmit)}
+            <Form className='container form-fields' onSubmit={handleSubmit(onSubmit)}
                 noValidate>
                 <div className="row col-lg-13">
                     <Form.Group className="col-md-12 col-lg-6">
