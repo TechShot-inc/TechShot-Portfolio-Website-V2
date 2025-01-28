@@ -43,7 +43,7 @@ export const getProjectByName = async(req,res) => {
 
         res.status(200).json(project);
     } catch (error) {
-        console.error('Error fetching member by name:', error);
+        // console.error('Error fetching member by name:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 }

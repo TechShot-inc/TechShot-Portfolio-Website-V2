@@ -15,7 +15,7 @@ export default function TechStack() {
                     setActiveDiv(data[0].category); // Set the first category as active by default
                 }
             } catch (error) {
-                console.error('Failed to fetch tech stacks', error);
+                // console.error('Failed to fetch tech stacks', error);
             }
         };
 

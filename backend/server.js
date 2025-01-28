@@ -30,7 +30,7 @@ const limiter = rateLimit({
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
-    console.log(req.path, req.method)
+    // console.log(req.path, req.method)
     next()
 })
 //routes
@@ -52,10 +52,10 @@ const start = async () => {
 
         // Listen for requests
         app.listen(port, () => {
-            console.log(`Connected to DB & listening on port ${port}...`);
+            // console.log(`Connected to DB & listening on port ${port}...`);
         });
     } catch (error) {
-        console.error('Error connecting to the database:', error);
+        // console.error('Error connecting to the database:', error);
         process.exit(1); // Exit process with failure code
     }
 };

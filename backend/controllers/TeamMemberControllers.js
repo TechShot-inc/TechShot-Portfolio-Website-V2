@@ -33,7 +33,7 @@ export const getMemberByName = async (req, res) => {
 
         res.status(200).json(member);
     } catch (error) {
-        console.error('Error fetching member by name:', error);
+        // console.error('Error fetching member by name:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 };

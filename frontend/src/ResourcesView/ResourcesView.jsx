@@ -15,7 +15,7 @@ function ResourcesView() {
                     setResources(data); 
                 }
             } catch (error) {
-                console.error("Failed to fetch resources:", error);
+                // console.error("Failed to fetch resources:", error);
             } finally {
                 setLoading(false);
             }

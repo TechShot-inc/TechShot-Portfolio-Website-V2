@@ -30,14 +30,14 @@ export default function BootstrapForm() {
                     'Content-Type': 'application/json',
                 },
             });
-            console.log('Form Data:', data);
+            // console.log('Form Data:', data);
             setSuccess(true)
             setTimeout(() => {
                 form.reset();
                 setSuccess(false);
             }, 1500);
         } catch (error) {
-            console.log('Network error:', error); // Log the error for debugging purposes
+            // console.log('Network error:', error); // Log the error for debugging purposes
         }
     }
 

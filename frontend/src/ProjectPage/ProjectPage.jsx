@@ -50,7 +50,7 @@ const fetchMemberNames = async (memberIds) => {
         );
         return memberNames;
     } catch (error) {
-        console.error("Error fetching member names:", error);
+        // console.error("Error fetching member names:", error);
         return [];
     }
 };

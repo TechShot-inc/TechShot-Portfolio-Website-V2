@@ -16,7 +16,7 @@ export default function TeamView() {
                 setMembers(response.data);
                 setLoading(false);
             } catch (error) {
-                console.error("There was an error fetching the members!", error);
+                // console.error("There was an error fetching the members!", error);
                 setLoading(false);
             }
         };

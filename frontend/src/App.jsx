@@ -20,7 +20,6 @@ function App() {
         teamRef={teamRef}
         resourcesRef={resourcesRef}
       />
-      <Router>
         <div>
           <Routes>
             <Route path="/" element={<HomePage
@@ -36,7 +35,6 @@ function App() {
 
           </Routes>
         </div>
-      </Router>
       <Footer
         homeRef={homeRef}
         projectsRef={projectsRef}

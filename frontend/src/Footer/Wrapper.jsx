@@ -34,9 +34,9 @@ export default function Wrapper({ homeRef, projectsRef, teamRef, resourcesRef })
                 <button className="btn btn-text ContactUs" onClick={() => scrollToRef(homeRef)}>Contact Us</button>
                 </div>
             </div>
-            <div className='row social col-6'>
+            {/* <div className='row social col-6'>
                 <SocialLinks />
-            </div>
+            </div> */}
 
         </div >
     )

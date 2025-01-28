@@ -59,6 +59,10 @@ h5 {
     font-weight: 700;
 }
 
+.ContactUs{
+    text-decoration: underline;
+}
+
 
 .information  button:hover {
     padding-left: 1rem;
