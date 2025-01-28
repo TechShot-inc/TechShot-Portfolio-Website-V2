@@ -24,11 +24,12 @@
     width: 100%;
     margin-top: 1rem;
 }
-.wrapper-row.social {
+.social {
     display: flex;
     align-self: flex-end;
     justify-content: flex-end;
-    width: fit-content;
+    min-width: fit-content;
+    margin-right: -18rem;
 }
 h5 {
     color: #005EA2;
@@ -41,9 +42,11 @@ h5 {
 .phoneNumber,
 .slogan{
     margin-block: 1.5rem;
+    font-size: 1rem;
+    min-width: fit-content;
 }
-
-.information li a{
+.ContactUs,
+.information li button{
     color: #191970;
     text-decoration: none;
     z-index: 3;
@@ -52,9 +55,16 @@ h5 {
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
-li a:hover {
+.ContactUs{
+    text-decoration: underline;
+}
+
+
+.information  button:hover {
     padding-left: 1rem;
     color: #FFFFFF;
 }
@@ -80,11 +90,16 @@ li a:hover {
 
 }
 @media (max-width: 1199.98px) { 
-    .wrapper-container {
+    .social{
+        margin-right: -4rem;
+    }
     }
   }
 @media (max-width: 991.98px) {
-    .wrapper-container {
+    .social{
+       justify-self: center;
+       max-width: 10px;
+       align-self: center;
     }
   }
 
@@ -100,9 +115,30 @@ li a:hover {
     .wrapper-row {
         flex-direction: column; /* Stack row items vertically */
         align-items: center; /* Center items */
+        justify-content: center;
     }
     .social {
-        margin-right: 6.5rem;
+        align-self: center;
+        margin-right: 1rem;
+    }
+    .sloganContainer {
+    }
+    .wrapper-container{
+        padding: 1rem;
+        justify-content: center;
+    }
+    .slogan{
+        font-size: 1.3rem;
     }
   }
+  @media (max-width: 576px) {
+    .social {
+        align-self: flex-start;
+    }
   
+  }
+  
+  /* Extra small devices (smaller phones, below 576px) */
+  @media (max-width: 360px) {
+  
+  }

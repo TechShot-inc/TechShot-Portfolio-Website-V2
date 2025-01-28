@@ -8,19 +8,39 @@
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
-    padding: 0; /* Add padding if desired */
-    margin-top: 7px;
-    height: 30px;
+    padding: 0; 
+    height: 30px ;
     background-color: transparent;
     color: #000;
 }
 .phoneNumber .PhoneInputCountrySelectArrow {
-    color: #000; /* Change to desired color */
-    
+    color: #000;
+    transform: translate(0%,-170%) rotate(45deg);
+    -webkit-transform: translate(0%,-170%) rotate(45deg);
+    -moz-transform: translate(0%,-170%) rotate(45deg);
+    -ms-transform: translate(0%,-170%) rotate(45deg);
+    -o-transform: translate(0%,-170%) rotate(45deg);
 }
 .phoneNumber input:focus {
     border-color: #007bff; /* Change border color on focus */
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Highlight effect */
     outline: none; /* Remove default outline */
     
+}
+
+.phoneNumber input{
+    transform: translate(0%,-50%);
+    transform: translate(0%,-90%);
+    -webkit-transform: translate(0%,-50%);
+    -moz-transform: translate(0%,-50%);
+    -ms-transform: translate(0%,-50%);
+    -o-transform: translate(0%,-50%);
+}
+
+.phoneNumber .PhoneInputCountryIcon{
+    transform: translate(0%,-60%);
+    -webkit-transform: translate(0%,-60%);
+    -moz-transform: translate(0%,-60%);
+    -ms-transform: translate(0%,-60%);
+    -o-transform: translate(0%,-60%);
 }

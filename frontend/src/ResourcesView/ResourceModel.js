@@ -3,7 +3,7 @@ class ResourceModel {
         this.image = image;
         this.description = description;
         this.link = link;
-        console.log(resource.image)
+        // console.log(resource.image)
     }
 }
 export default ResourceModel;

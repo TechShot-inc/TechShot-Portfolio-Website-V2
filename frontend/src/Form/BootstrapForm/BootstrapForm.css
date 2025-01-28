@@ -3,6 +3,8 @@
     color: #8D8D8D;
     font-size: 0.9rem;
     flex: 0 0 7rem;
+    text-shadow: 0 1px 1.5px #8D8D8D;
+
   }
     
 
@@ -99,12 +101,9 @@
     width: 100%;
 }
 
-.form-label {
-    text-shadow: 0 1px 1.5px #8D8D8D;
-}
 
 .container {
-    line-height: 40px ;
+    line-height: 20px ;
 }
 
 .form-control {
@@ -148,25 +147,25 @@
 
 @media(max-width: 1200px) {
  
-  .message {
+/*   .message {
     transform: translate(0%,-40%);
     -webkit-transform: translate(0%,-40%);
     -moz-transform: translate(0%,-40%);
     -ms-transform: translate(0%,-40%);
     -o-transform: translate(0%,-40%);
 }
-
+ */
 
 }
 @media(max-width: 992px) {
 
  
     .message {
-      transform: translate(0%,-50%);
-      -webkit-transform: translate(0%,-50%);
-      -moz-transform: translate(0%,-50%);
-      -ms-transform: translate(0%,-50%);
-      -o-transform: translate(0%,-50%);
+      transform: translate(0%,-40%);
+      -webkit-transform: translate(0%,-40%);
+      -moz-transform: translate(0%,-40%);
+      -ms-transform: translate(0%,-40%);
+      -o-transform: translate(0%,-40%);
 }
 .submit-button{
   bottom: -3rem;
@@ -176,11 +175,11 @@
   /* Medium devices (tablets in portrait mode, 768px and up) */
 @media (max-width: 768px) {
   .message {
-    transform: translate(0%,-70%);
-    -webkit-transform: translate(0%,-70%);
-    -moz-transform: translate(0%,-70%);
-    -ms-transform: translate(0%,-70%);
-    -o-transform: translate(0%,-70%);
+    transform: translate(0%,-60%);
+    -webkit-transform: translate(0%,-60%);
+    -moz-transform: translate(0%,-60%);
+    -ms-transform: translate(0%,-60%);
+    -o-transform: translate(0%,-60%);
 }
   .submit-button{
     bottom: 0.8rem;

@@ -1,8 +1,8 @@
 .project-card{
-    background-color: rgb(249, 246, 248);
+    background-color: rgb(214, 225, 255);
     padding-inline:10%;
     padding-block: 5%;
-    border:0.25px solid pink;
+    border:0.25px solid purple;
     border-radius: 2%;
     -webkit-border-radius: 2%;
     -moz-border-radius: 2%;

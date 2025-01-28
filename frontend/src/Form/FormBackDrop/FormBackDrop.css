@@ -9,6 +9,9 @@
     overflow: hidden;
   }
   
+  .backdrop{
+    position: relative;
+  }
   
 
   .close-button{
@@ -44,6 +47,14 @@
       height: auto; 
     }
     .close-button{
+      top:10rem;
     }
   
   }
+
+  /* Small devices (mobile phones, 576px and up) */
+@media (max-width: 576px) {
+  .close-button{
+    top:13rem;
+  }
+}

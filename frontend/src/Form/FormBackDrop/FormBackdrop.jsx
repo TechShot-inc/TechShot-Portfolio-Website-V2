@@ -7,7 +7,7 @@ export default function FormBackdrop({ hide, open }) {
     return (
         <Backdrop
             sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-            open={open}
+            open={open} className='backdrop'
         >
             <CloseButton aria-label="Hide" onClick={hide} className='close-button' />
             <div className='form-container'>

@@ -10,13 +10,12 @@ export default function TechStack() {
         const fetchTechStack = async () => {
             try {
                 const { data } = await axios.get('http://localhost:4000/api/v1/stack/techStack');
-                console.log('Tech stack data fetched successfully:', data);
                 setTechStacks(data);
                 if (data.length > 0) {
                     setActiveDiv(data[0].category); // Set the first category as active by default
                 }
             } catch (error) {
-                console.error('Failed to fetch tech stacks', error);
+                // console.error('Failed to fetch tech stacks', error);
             }
         };
 
@@ -25,13 +24,13 @@ export default function TechStack() {
 
     return (
         <div className="tech-stack">
-            <h2 className='title'>Tech Stack</h2>
+            <h2 className='stack-title'>Tech Stack</h2>
             <h3>Our Frameworks</h3>
             <ul className="nav nav-pills nav-fill">
                 {techStacks.map(stack => (
                     <li key={stack.category} className="nav-item categoryButton">
                         <a
-                            className={`nav-link ${activeDiv === stack.category ? 'active' : ''}`}
+                            className={`nav-link cat-button ${activeDiv === stack.category ? 'active' : ''}`}
                             onClick={() => setActiveDiv(stack.category)}
                         >
                             {stack.category}

@@ -14,7 +14,6 @@
   padding: 0.75% ;
   background-color: #79A8DC;
   width: 100%;
-  max-height: 15%;
   min-width: 100px;
   position:fixed;
   top: 0%; 
@@ -23,6 +22,8 @@
 
 .logoContainer {
   display:flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   margin: 0.3% 0px;
 }
@@ -38,7 +39,7 @@
   gap: 0px; 
 }
 .logoText{
-  font-size: 32px;
+  font-size: 1.5rem;
   font-family: 'Aleo', serif;
   letter-spacing: 0.5rem;
   color: #075B9E;
@@ -53,4 +54,60 @@
   font-size: 1.5rem;
   font-weight: 800;
   margin: 0px auto;
+}
+.toggler-button{
+  margin-right: 2%;
+}
+
+@media (max-width: 770px) {
+  
+.header {
+  display: flex;
+  flex-direction: row;
+  margin: 0px ;
+  padding: 0px;
+  background-color: #79A8DC;
+  width: 100%;
+  flex-wrap: nowrap;  
+  position:fixed;
+  top: 0%; 
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.logoContainer {
+  display:flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+  margin:0px;
+  padding: 0px;
+  width: 80%;
+}
+.logo{
+  margin: 5% 5%;
+  width: 25%;
+  height: auto;
+}
+.navbar-nav {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  gap: 0px; 
+}
+.logoText{
+  font-size: rem;
+  font-family: 'Aleo', serif;
+  letter-spacing: 0.5rem;
+  color: #075B9E;
+  -webkit-text-stroke: 0.25px black;
+  padding: 0px;
+  margin: 0px;
+}
+
+.button {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0px ;
+}
 }

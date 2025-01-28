@@ -5,7 +5,7 @@ import ContentSection from './ContentSection';
 import TeamMembers from "../TeamMembers/TeamMembers";
 
 const ProjectPage = () => {
-    const { id } = useParams();
+    const { id ,name} = useParams();
     const [project, setProject] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -13,7 +13,7 @@ const ProjectPage = () => {
     useEffect(() => {
         const fetchProject = async () => {
             try {
-                const response = await fetch(`http://localhost:4000/api/v1/projects/${id}`);
+                const response = await fetch(`http://localhost:4000/api/v1/projects/name/${name}`);
                 if (!response.ok) {
                     throw new Error(`HTTP status ${response.status}`);
                 }
@@ -27,7 +27,7 @@ const ProjectPage = () => {
         };
 
         fetchProject();
-    }, [id]);
+    }, [name]);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
@@ -50,7 +50,7 @@ const fetchMemberNames = async (memberIds) => {
         );
         return memberNames;
     } catch (error) {
-        console.error("Error fetching member names:", error);
+        // console.error("Error fetching member names:", error);
         return [];
     }
 };
@@ -71,7 +71,7 @@ const ProjectMembers = ({ project }) => {
                     <div className="header-content">
                         <div className="logo"></div>
                         <h1>{project.name}</h1>
-                        <h2>{project.projectOverview}</h2>
+                        <h2 >{project.projectOverview}</h2>
                     </div>
                 </div>
             </header>
@@ -98,7 +98,7 @@ const ProjectMembers = ({ project }) => {
                     <div className="row team-view-row">
                         {memberNames.length > 0 ? (
                             memberNames.map((member) => (
-                                <TeamMembers key={member.id} memberId={member.id} name={member.name.split(' ')[0]} image={member.imgPath} />
+                                <TeamMembers key={member.id} memberId={member.id} name={member} image={member.imgPath} />
                             ))
                         ) : (
                             <p>Loading members...</p>

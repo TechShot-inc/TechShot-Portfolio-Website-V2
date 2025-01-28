@@ -23,13 +23,21 @@ export const getMember = async (req, res) => {
 
 export const getMemberByName = async (req, res) => {
     const { name } = req.params;
-    const member = await Member.findOne({ name: name }).exec().populate('projects');
 
-    if (!member) {
-        return res.status(404).json({ error: 'No such member' })
+    try {
+        const member = await Member.findOne({ name }).populate('projects');
+
+        if (!member) {
+            return res.status(404).json({ error: 'No such member' });
+        }
+
+        res.status(200).json(member);
+    } catch (error) {
+        // console.error('Error fetching member by name:', error);
+        res.status(500).json({ error: 'Internal server error' });
     }
-    res.status(200).json(member)
-}
+};
+
 // ========================== Administrator Only ============================= //
 // Add a new member
 export const createMember = async (req, res) => {

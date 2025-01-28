@@ -77,14 +77,14 @@ function sendEmail({ firstName, lastName, email, phoneNumber, message }) {
         // Send email to your email address
         transporter.sendMail(mailToSelf, (error, info) => {
             if (error) {
-                console.log(error);
+                // console.log(error);
                 return reject({ message: 'An error occurred while sending email to admin' });
             }
 
             // Send confirmation email to user
             transporter.sendMail(mailToUser, (error, info) => {
                 if (error) {
-                    console.log(error);
+                    // console.log(error);
                     return reject({ message: 'An error occurred while sending confirmation email to user' });
                 }
 

@@ -7,8 +7,8 @@ import BtnContactUs from '../BtnContactUs/BtnContactUs';
 export default function LandingPage() {
     return (
         <div className="landing-container">
+            <img src={circle} className="circle" />
             <div className='left-part'>
-                <img src={circle} className="circle"/>
                 <div className='info-container'>
                     <span className="title-text">
                         Dream <b className="highlighted">Big</b> <br />

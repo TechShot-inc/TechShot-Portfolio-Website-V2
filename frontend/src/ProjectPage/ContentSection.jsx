@@ -12,7 +12,7 @@ function ContentSection({ title, text, highlight, author, image, altText, imageO
                     <div className="vertical-bar"></div>
                     <p className="highlight">{highlight}</p>
                 </div>
-                <TeamMemberCard memberId={author} />
+                <TeamMemberCard memberId={author} name={author.name}/>
             </div>
             <div className="image-content">
                 <img src={image} alt={altText} />

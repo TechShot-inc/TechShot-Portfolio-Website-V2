@@ -1,5 +1,6 @@
 import './Header.css'
 import logo from '../../assets/header/logo.svg'
+import { Link } from 'react-router-dom';
 
 function scrollToRef(ref, offset = 0) {
   if (ref.current) {
@@ -13,11 +14,13 @@ export default function Header({ homeRef, projectsRef, teamRef, resourcesRef }) 
     <nav className="navbar navbar-expand-lg bg-body-tertiary headerContainer">
       <div className="container-fluid header">
         <div className="logoContainer">
-          <img src={logo} className="logo" />
-          <span className="logoText">TECH SHOT</span>
+          <Link to="/" onClick={() => scrollToRef(homeRef)}>
+            <img src={logo} className="logo" alt="logo" />
+            <span className="logoText">TECH SHOT</span>
+          </Link>
         </div>
         <div className="space"></div>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler toggler-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarText">

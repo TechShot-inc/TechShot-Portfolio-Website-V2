@@ -7,7 +7,7 @@ import {
     deleteMember,
     getMemberByName
 } from '../controllers/TeamMemberControllers.js';
-
+import { validateApiKey } from './ValidateApiKey.js';
 const router = express.Router();
 
 // Get all members
@@ -20,12 +20,12 @@ router.get('/id/:id', getMember);
 router.get('/name/:name', getMemberByName);
 
 // Create a new member
-router.post('/', createMember);
+router.post('/', validateApiKey , createMember);
 
 // Delete a member by ID
-router.delete('/:id', deleteMember);
+router.delete('/:id', validateApiKey, deleteMember);
 
 // Update a member by ID
-router.patch('/:id', updateMember);
+router.patch('/:id', validateApiKey, updateMember);
 
 export default router;

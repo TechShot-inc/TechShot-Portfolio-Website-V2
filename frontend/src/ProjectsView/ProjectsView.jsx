@@ -13,7 +13,7 @@ export default function ProjectsView() {
                 const data = await response.json();
                 setProjects(data);
             } catch (error) {
-                console.error('Error fetching projects:', error);
+                // console.error('Error fetching projects:', error);
             }
         };
 
@@ -21,12 +21,12 @@ export default function ProjectsView() {
     }, []);
 
     if (!projects.length) {
-        return <div>Loading...</div>;
+        return <></>;
     }
 
     return (
         <div id="carouselExampleCaptions" className="carousel slide carousel-fade projects-cards" data-bs-touch="true">
-            <span className='title'>Our Projects</span>
+            <span className='projects-title'>Our Projects</span>
             <div className="carousel-indicators">
                 {projects.map((project, index) => (
                     <button
@@ -43,10 +43,10 @@ export default function ProjectsView() {
             <div className="carousel-inner">
                 {projects.map((project, index) => (
                     <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-                        <Link to={`/project/${project._id}`}>
+                        <Link to={`/project/${project.name}`}>
                             <img src={project.projectImagePath} className="d-block w-100" alt={project.name} />
                         </Link>
-                        <div className="carousel-caption d-none d-md-block">
+                        <div className="carousel-caption">
                             <h5 className='label'>{project.name}</h5>
                             <p className='sub-label'>{project.projectOverview}</p>
                         </div>
