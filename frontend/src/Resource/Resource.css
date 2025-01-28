@@ -1,16 +1,15 @@
 #resource-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  height: 30vh;
   max-width: 300px;
-  margin: 10px 50px;
+  margin: 10px 20px;
 }
 
 .img-wrapper {
-    width: 300px;  /* Desired width */
-    height: 300px; /* Desired height */
+    width: 15rem;  /* Desired width */
+    height: 15rem; /* Desired height */
     overflow: hidden; /* Hide any overflow */
     border-radius: 10px; /* Apply rounded corners if desired */
     position: relative; /* Set position for child elements */

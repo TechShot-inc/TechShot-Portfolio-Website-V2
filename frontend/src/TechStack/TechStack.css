@@ -5,7 +5,7 @@
     justify-content: center; /* Center content vertically */
     align-items: center;/* Center content horizontally */
     text-align: center;
-    height: 50vh;          /* Full viewport height */
+            /* Full viewport height */
     margin: 0;
     padding: 0;
 
@@ -13,9 +13,11 @@
 
 .tech-logo{
     padding: 30px;
+    width: 12vw;
+    height: auto; 
 }
 
-.title{
+.stack-title{
     font-size: 4em;
     padding-top: 0;
     margin-top: 0;
@@ -41,4 +43,32 @@
 }
 .nav.nav-pills .nav-link:hover {
     background-color: rgba(32, 32, 32, 0.1);
+}
+
+@media (max-width: 777px) {
+    .tech-logo{
+    padding: 30px;
+    width: 25vw;
+    height: auto; 
+    }
+    .cat-button{
+        font-size: 1.5rem;
+    }
+    .stack-title{
+        font-size: 2rem;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    h3{
+        font-size: 1rem;
+        margin: 0px;
+        padding: 0px;
+    }
+    .categoryButton{
+        
+        font-size: 32px;
+        
+    }
+    
 }

@@ -64,3 +64,10 @@
     transform: translateY(-0.1em);
   }
 }
+
+@media (max-width: 770px) {
+  .btn-contact-us:hover span {
+  transform: translateX(7.5em);
+}
+}
+  

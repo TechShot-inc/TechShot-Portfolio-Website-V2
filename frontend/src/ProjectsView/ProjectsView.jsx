@@ -26,7 +26,7 @@ export default function ProjectsView() {
 
     return (
         <div id="carouselExampleCaptions" className="carousel slide carousel-fade projects-cards" data-bs-touch="true">
-            <span className='title'>Our Projects</span>
+            <span className='projects-title'>Our Projects</span>
             <div className="carousel-indicators">
                 {projects.map((project, index) => (
                     <button
@@ -46,7 +46,7 @@ export default function ProjectsView() {
                         <Link to={`/project/${project.name}`}>
                             <img src={project.projectImagePath} className="d-block w-100" alt={project.name} />
                         </Link>
-                        <div className="carousel-caption d-none d-md-block">
+                        <div className="carousel-caption">
                             <h5 className='label'>{project.name}</h5>
                             <p className='sub-label'>{project.projectOverview}</p>
                         </div>

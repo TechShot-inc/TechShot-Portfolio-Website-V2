@@ -31,7 +31,7 @@ function ResourcesView() {
     return (
         <div id='resources-view-container'>
             <h3>Featured</h3>
-            <h2>Resources</h2>
+            <h2 className='resources-title'>Resources</h2>
             <div id='resources-container' className="scroll-container">
                 {resources.map((resource) => (
                     <Resource

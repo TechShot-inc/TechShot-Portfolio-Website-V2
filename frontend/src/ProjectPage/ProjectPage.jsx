@@ -71,7 +71,7 @@ const ProjectMembers = ({ project }) => {
                     <div className="header-content">
                         <div className="logo"></div>
                         <h1>{project.name}</h1>
-                        <h2>{project.projectOverview}</h2>
+                        <h2 >{project.projectOverview}</h2>
                     </div>
                 </div>
             </header>

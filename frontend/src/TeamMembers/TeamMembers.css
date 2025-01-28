@@ -123,20 +123,9 @@ background: rgb(193, 228, 248);
 
 
 
-/*   .team-member-image-container {
-  justify-self: center;
-  width: 50px;
-  height: 50px;
-  border: 3px solid purple;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  overflow: hidden;
-} */
 
-.team-member-image-container {
+
+/* .team-member-image-container {
 justify-self: center;
 width: 100px;
 height: 100px;
@@ -147,8 +136,28 @@ border-radius: 50%;
 -ms-border-radius: 50%;
 -o-border-radius: 50%;
 overflow: hidden;
-}
+} */
 .team-member-image {
-  width: 100%;
-  height: 100%;
+  border-radius: 50%;
+  width: 100px;       /* Set a specific width */
+  height: 100px;      /* Set a specific height */
+  object-fit: cover;
+}
+
+.team-member-image-container {
+  display: flex;              /* Enables flex context for child elements */
+  justify-content: center;    /* Centers children horizontally in the container */
+  align-items: center;        /* Centers children vertically in the container */
+  /* Additional custom styles for the container can go here */
+  width: 150px;               /* Example: fixed width */
+  height: 150px;              /* Example: fixed height */
+  border-radius: 50%;         /* Makes the container circular */
+  overflow: hidden;           /* Ensures nothing spills outside the border */
+  border: 3px solid purple;    /* Example: border around the profile photo */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Example: shadow for depth */
+
+  width: 100%;      /* Make the image fill the container */
+  height: 100%;     /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the space without distortion */
+
 }
