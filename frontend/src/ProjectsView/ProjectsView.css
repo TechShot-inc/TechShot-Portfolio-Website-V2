@@ -12,7 +12,7 @@
 }
 
 
-.title {
+.projects-title {
   color: black;
   font-size: 200%;
   font-weight: 800;
@@ -54,13 +54,61 @@
 }
 
 
-@media (max-width: 1200px) {
-      .label {
-        font-size: 1.5rem;
-      }
-      .sub-label{
-        font-size: 100%;
-      }
+@media (max-width: 770px) {
+      .projects-cards {
+      background-color: #79A8DC;
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content: center;
+      justify-items: center;
+      margin: 0px;
+      padding: 2% 5%;
+      z-index: 300;
+      overflow: hidden;
+  }
+
+
+  .projects-title {
+    color: black;
+    font-size: 150%;
+    font-weight: 800;
+    margin: 1% 0px 1% 0px;
+  }
+
+  .carousel-inner {
+      width: 70%;
+  }
+
+  .label {
+    font-size: 1.5rem;
+    color: white; /* Set the text color */
+      text-shadow: 
+        -1px -1px 0 black,  
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+    
+}
+.sub-label{
+    font-size: 70%;
+    text-shadow: 
+        -1px -1px 0 black,  
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+  .projects-view {
+      background-color: #79A8DC;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0px;
+      padding: 0px 0px 70px 0px;
+      z-index: 300;
+  }
     }
 
 

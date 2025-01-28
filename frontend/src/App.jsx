@@ -7,6 +7,9 @@ import ProfilePage from './Pages/ProfilePage';
 import NotFoundPage from './Pages/NotFoundPage';
 import React, { useRef } from 'react';
 
+
+
+
 function App() {
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
@@ -20,7 +23,7 @@ function App() {
         teamRef={teamRef}
         resourcesRef={resourcesRef}
       />
-      <Router>
+      
         <div>
           <Routes>
             <Route path="/" element={<HomePage
@@ -37,7 +40,7 @@ function App() {
 
           </Routes>
         </div>
-      </Router>
+      
     </>
   );
 }
