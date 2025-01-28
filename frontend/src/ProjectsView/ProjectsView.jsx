@@ -21,7 +21,7 @@ export default function ProjectsView() {
     }, []);
 
     if (!projects.length) {
-        return <div>Loading...</div>;
+        return <></>;
     }
 
     return (

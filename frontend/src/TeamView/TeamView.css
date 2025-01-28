@@ -6,6 +6,10 @@
     padding: 3rem;
     z-index: 1;
     overflow: hidden;
+
+}
+.TeamViewContainer{
+    background-color: #dddddd;
 }
 
 .team-view-row {

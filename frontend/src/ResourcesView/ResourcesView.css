@@ -52,3 +52,7 @@ h3 {
   }
 }
   
+.NoResources{
+  min-height: 3px;
+  background-color: black;
+}

@@ -24,8 +24,8 @@ function ResourcesView() {
         fetchResources();
     }, []);
 
-    if (loading) {
-        return <p>Loading...</p>;
+    if (! resources.length) {
+        return <div className='NoResources'></div>;
     }
 
     return (

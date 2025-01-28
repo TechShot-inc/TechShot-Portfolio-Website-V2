@@ -1,5 +1,7 @@
 
-
+.NoProjectsEnrolled {
+    padding-bottom: 200px;
+}
 .projects-enrolled{
     display:flex;
     align-items: center;
